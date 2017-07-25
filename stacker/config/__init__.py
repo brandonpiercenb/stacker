@@ -279,7 +279,8 @@ class Config(Model):
 
     lookups = DictType(StringType, serialize_when_none=False)
 
-    stacks = ListType(ModelType(Stack), default=[], validators=[not_empty_list])
+    stacks = ListType(
+        ModelType(Stack), default=[], validators=[not_empty_list])
 
     def validate(self):
         try:
